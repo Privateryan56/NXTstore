@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowerRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Container } from 'react-bootstrap'
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -12,7 +12,9 @@ function App() {
     <Header/>
       <main className='py-3'>
         <Container>
-         <Route path = '/' component={HomeScreen} exact/>
+          <Routes>
+         <Route path = '/' element={HomeScreen()} exact/>
+          </Routes>
         </Container>
         </main>
       <Footer/>
