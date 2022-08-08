@@ -10,8 +10,20 @@ import {
   ListGroupItem,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
-import products from "../products";
-function ProductScreen() {
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+function ProductScreen({ match }) {
+  const [product, setProduct] = useState({});
+
+  useEffect(() => {
+    const fetchProduct = async () =>{
+      const {data} = await axios.get(`/api/products/${match.params.id}`)
+
+      setProduct(data)
+    }
+    fetchProduct()
+  }, [])
   return (
     <>
       <Link className="btn btn-primary" to="/">
@@ -19,22 +31,22 @@ function ProductScreen() {
       </Link>
       <Row>
         <Col md={6}>
-          <Image src={products.image} alt={products.name} fluid />
+          <Image src={product.image} alt={product.name} fluid />
         </Col>
         <Col md={3}>
           <ListGroup variant="flush">
             <ListGroup.Item>
-              <h3>{products.name}</h3>
+              <h3>{product.name}</h3>
             </ListGroup.Item>
             <ListGroup.Item>
               <Rating
-                value={products.rating}
-                text={`${products.numReviews} reviews`}
+                value={product.rating}
+                text={`${product.numReviews} reviews`}
               />
             </ListGroup.Item>
-            <ListGroup.Item>Price : ${products.price}</ListGroup.Item>
+            <ListGroup.Item>Price : ${product.price}</ListGroup.Item>
             <ListGroup.Item>
-              Description : {products.description}
+              Description : {product.description}
             </ListGroup.Item>
           </ListGroup>
         </Col>
@@ -45,7 +57,7 @@ function ProductScreen() {
                 <Row>
                   <Col>Price:</Col>
                   <Col>
-                    <strong>${products.price}</strong>
+                    <strong>${product.price}</strong>
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -53,7 +65,7 @@ function ProductScreen() {
                 <Row>
                   <Col>Status:</Col>
                   <Col>
-                    {products.countInStock > 0 ? "In Stock" : "Out of Stock"}
+                    {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
                   </Col>
                 </Row>
               </ListGroup.Item>
