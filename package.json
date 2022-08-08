@@ -4,7 +4,7 @@
   "description": "mernstack",
   "main": "server.js",
   "scripts": {
-  "start": "node backend/server"
+    "start": "node backend/server"
   },
   "repository": {
     "type": "git",
