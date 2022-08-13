@@ -1,3 +1,4 @@
+import { startTransition } from "react";
 import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../constants/cartConstants";
 
 export const cartReducer = (state = [], action) => {
@@ -19,7 +20,10 @@ export const cartReducer = (state = [], action) => {
         };
       }
     case CART_REMOVE_ITEM:
-      return state.filter((item) => item.product._id !== action.payload);
+     return {
+      ...state, 
+      cartItems: state.cartItems.filter( x => x.product !== action.payload)
+     }
     default:
       return state;
   }
