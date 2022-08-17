@@ -15,11 +15,10 @@ function App() {
       <main className="py-3">
         <Container>
           <Routes>
-            <Route path= "/login" element = {<LoginScreen />} />
+            <Route path="/login" element={<LoginScreen />} />
             <Route path="/product/:id" element={<ProductScreen />} />
-            <Route path="/cart/:id" element={<CartScreen/>}/>
+            <Route path="/cart/:id" element={<CartScreen />} />
             <Route path="/" element={<HomeScreen />} exact />
-
           </Routes>
         </Container>
       </main>

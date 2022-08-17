@@ -7,27 +7,27 @@ import FormContainer from "../components/FormContainer";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const LoginScreen = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const location = useLocation();
   const dispatch = useDispatch();
-  const history = useNavigate()
+  const history = useNavigate();
 
-  const userLogin = useSelector(state => state.userLogin)
-  const {loading, error, userInfo} =userLogin
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userInfo } = userLogin;
 
-  const redirect = location.search ? location.search.split("=")[1] : "/login";
-  
-    useEffect(() => {
-        if(userInfo){
-            history(redirect)
-        }
-    }, [history, userInfo, redirect])
+  const redirect = location.search ? location.search.split("=")[1] : "/";
+
+  useEffect(() => {
+    if (userInfo) {
+      history(redirect);
+    }
+  }, [history, userInfo, redirect]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(login(email,password))
+    dispatch(login(email, password));
   };
 
   return (
