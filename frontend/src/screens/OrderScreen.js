@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useParams } from "react";
+import React ,{ useState, useEffect }from "react";
+import  {useParams}  from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import {
   Button,
@@ -19,7 +20,7 @@ function OrderScreen() {
   const history = useNavigate();
 
   const orderDetails = useSelector((state) => state.orderDetails);
-  const { order, loading, error } = orderDetails;
+  const { order, loading, error, success } = orderDetails;
 
   if (!loading) {
     const addDecimals = (num) => {
