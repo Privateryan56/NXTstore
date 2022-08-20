@@ -30,7 +30,7 @@ const CartScreen = () => {
   const qty = location.search ? Number(location.search.split("=")[1]) : 1;
 
   const checkoutHandler =() =>{
-    history('/login?redirect=shipping')
+    history('/shipping')
   }
 
    const removeFromCartHandler= (id) =>{
