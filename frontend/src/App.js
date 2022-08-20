@@ -13,7 +13,7 @@ import ShippingScreen from "./screens/ShippingScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
-import Order from "../../backend/models/orderModel";
+
 
 function App() {
   return (
@@ -24,6 +24,8 @@ function App() {
           <Routes>
             <Route path="/order/:id" element={<OrderScreen />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />
+            <Route path ="/profile" element={<ProfileScreen />} />
+            <Route path="/register" element={<RegisterScreen />} />
             <Route path="/payment" element={<PaymentScreen />} />
             <Route path="/shipping" element={<ShippingScreen />} />
             <Route path="/login" element={<LoginScreen />} />

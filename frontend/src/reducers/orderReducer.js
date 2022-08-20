@@ -23,7 +23,10 @@ export const orderCreateReducer = (state = {}, action) => {
       return {
         loading: false,
         error: action.payload,
-      };
+
+      }
+    default:
+      return state;
   }
 };
 
@@ -47,5 +50,7 @@ export const orderDetailsReducer = (
         loading: false,
         error: action.payload,
       };
+    default:
+      return state;
   }
 };
