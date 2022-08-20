@@ -68,3 +68,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+NXT Purchase:
+An e-commerece store where you can buy your next electronic device.
+
+Technologies Used
+React.js/
+Javascript/
+Mongo/
+Bootstrap/
+
+Features not implemented(yet):
+Pay Pal API/
+Admin Screen
