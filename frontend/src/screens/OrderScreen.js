@@ -19,7 +19,7 @@ function OrderScreen() {
   const history = useNavigate();
 
   const orderDetails = useSelector((state) => state.orderDetails);
-  const { order, loading, error } = orderDetails;
+  const { order, loading, error, success } = orderDetails;
 
   if (!loading) {
     const addDecimals = (num) => {
